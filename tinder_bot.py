@@ -5,6 +5,10 @@ from time import sleep
 class TinderBot:
     def __init__(self):
         self.driver = webdriver.Chrome()
+        print("Please enter your email: ")
+        self.email = input()
+        print("Please enter your password: ")
+        self.password = input()
 
         sleep(1)
 
@@ -24,7 +28,7 @@ class TinderBot:
         current_win = self.driver.switch_to.window(self.driver.window_handles[1])
 
         email_in = self.driver.find_element_by_xpath('//*[@id="identifierId"]')
-        email_in.send_keys('r.aleph.c@gmail.com')
+        email_in.send_keys(self.email)
 
         sleep(1)
 
@@ -34,7 +38,7 @@ class TinderBot:
         sleep(2)
 
         pw_in = self.driver.find_element_by_xpath('//*[@id="password"]/div[1]/div/div[1]/input')
-        pw_in.send_keys('rosthekidd')
+        pw_in.send_keys(self.password)
 
         sleep(2)
 
